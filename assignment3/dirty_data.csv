@@ -1,8 +1,7 @@
-Name,Age,Salary,Hire Date,Department
-Alice, 29,50000,2021/01/15, Sales 
-Bob, 32, unknown,2020-03-18,MARKETING
- charlie, NaN, 70000,3/25/2019,marketinG
-Dana, 41, n/a,2020/12/01, HR
-Eve, 24,65000,2021/06/07,  hr
-Frank, 32,75000, 2019-07-11,Sales
-Bob, 32, unknown,2020-03-18,MARKETING
+Name, Age, City, Department, Salary, Hire Date
+James O'Connor, 42, Boston, IT, 92000, 2015-09-10
+Emily Rivera, N/A, Providence, HR, 68000, 2020-02-18
+Michael Thompson, 39, Portland, Finance, unknown, 2017-12-05
+James O'Connor, 42, Boston, IT, 92000, 2015-09-10
+Sophia Chen, 31, Hartford, Marketing, 70000, 2019/06/15
+Brian Kennedy, unknown, Bangor, it, n/a, 2016-08-30
