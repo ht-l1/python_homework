@@ -148,10 +148,6 @@ try:
         print("Subscriptions table created successfully.")
     except Exception as e:
         print(f"Error creating subscriptions table: {e}")
-
-    # commenting out the close statement as I cannot operate sample data on a closed database 
-    # conn.close()
-    # print("Connection Closed.")
 except Exception as e:
     print(f"Error: {e}")
 
@@ -186,3 +182,47 @@ add_subscription(conn, magazine5_id, subscriber4_id, "2024-10-10")
 # Commit the changes
 conn.commit()
 print("Sample data added and committed successfully.")
+
+'''
+# Task 4: Write SQL Queries
+Add these queries to your script. For each, print out all the rows returned by the query.
+'''
+
+try:
+    print("\nQuery 1: Retrieve all information from the subscribers table")
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM subscribers")
+    subscribers = cursor.fetchall()
+    for subscriber in subscribers:
+        print(subscriber)
+except Exception as e:
+    print(f"Error executing Query 1: {e}")
+    
+try:
+    print("\nQuery 2: Retrieve all magazines sorted by name.")
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM magazines ORDER BY name")
+    magazines = cursor.fetchall()
+    for magazine in magazines:
+        print(magazine)
+except Exception as e:
+    print(f"Error executing Query 2: {e}")
+
+try:
+    print("\nQuery 3: Find magazines for a particular publisher, one of the publishers you created. This requires a JOIN.")
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT m.magazine_id, m.name, p.name as publisher_name
+        FROM magazines m
+        JOIN publishers p ON m.publisher_id = p.publisher_id
+        WHERE p.name = 'Beacon Hill Publishing'
+    """)
+    tech_magazines = cursor.fetchall()
+    for magazine in tech_magazines:
+        print(magazine)
+except Exception as e:
+    print(f"Error executing Query 3: {e}")
+
+
+conn.close()
+print("Connection Closed.")
