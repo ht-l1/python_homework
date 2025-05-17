@@ -1,0 +1,38 @@
+Task 5: Ethical Web Scraping
+Goal: Understand the importance of ethical web scraping and robots.txt files.
+
+1. Access the robots.txt file for Wikipedia: Wikipedia Robots.txt.
+
+2. Analyze the file and answer the following questions. 
+> Which sections of the website are restricted for crawling?
+The sections that are restricted for crawling includes /w/, /api/, /trap/, indexes simlar to /wiki/Special, and pages with sensible deltion and meta user discussion pages. 
+
+There are also some user-agents being completely blocked: MJ12bot, Mediapartners-Google*, UbiCrawler, DOC, Zao, followed by many more. 
+
+> Are there specific rules for certain user agents?
+Yes there are specific rules for certain user agents. 
+For example, below means the entire site being blocked.  
+User-agent: MJ12bot
+Disallow: /
+
+Below means not blocked.
+User-agent: IsraBot
+Disallow:
+
+There are also explicit permissions toward some API endpoints but blocking some others like below. 
+User-agent: *
+Allow: /w/api.php?action=mobileview&
+Allow: /w/load.php?
+Allow: /api/rest_v1/?doc
+Disallow: /w/
+Disallow: /api/
+Disallow: /trap/
+Disallow: /wiki/Special:
+Disallow: /wiki/Spezial:
+Disallow: /wiki/Spesial:
+Disallow: /wiki/Special%3A
+Disallow: /wiki/Spezial%3A
+Disallow: /wiki/Spesial%3A
+
+3. Reflect on why websites use robots.txt and write 2-3 sentences explaining its purpose and how it promotes ethical scraping. 
+Websites are using robots.txt because it acts like a guide book that tells the developers how to use it ethically. It contains the rules about crawling the information from the website. It protects sensitive information like user admin information. It also guides in avoid using the high-load sections to minimize server strain.  

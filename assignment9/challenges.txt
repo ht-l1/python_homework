@@ -1,0 +1,6 @@
+Create a file, challenges.txt.  
+In this file, describe any challenges you faced in completing this assignment and how you resolved them.
+
+- When I was inspecting the website, I realized that it could use more descriptive element name. It took me some time to figure out how to approach it differently with xpath. I googled and used official docs for my refernece in how to implement it. 
+- Another challenge is the actual reference to each of the risks. I implemented a filter condition to identify OWASP risk items based on their standard format so it does not catch other items by mistake. The filter condition makes sure that the format is a mix of both character and digit and always start with the letter A and then followed by the nunber. 
+- The third challenge I had was to print out the result using a more efficient way. Instead of writing the counter for indexing and dictionary, I discovered that enumerate might be a better appraoch because it is built-in function with python that autmatically gives me the index and corresponding element. So I looked at python doc and used enumerate to iterate the result list for the printout. 
